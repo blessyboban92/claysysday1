@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS styles for the navigation bar */
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    ul.navbar li {
+      float: left
+    }
+
+    ul.navbar li.logo {
+      float: left;
+    }
+
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+
+    ul.navbar li.logo img {
+      vertical-align: middle;
+      margin-right: 10px;
+      height: 40px; /* Adjust the height as needed */
+    }
+	.footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+	.slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* CSS styles for the slideshow navigation dots */
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .dot.active {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar HTML markup -->
+  <ul class="navbar">
+    <li class="logo">
+      <img src="img/logo.jpg" alt="Logo">
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="login.html">Sign in</a></li>
+    <li><a href="register.html">Sign Up</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+   <div class="slideshow-container">
+    <img class="slideshow-image" src="img/1.jpg" alt="Image 1">
+    <img class="slideshow-image" src="img/2.jpg" alt="Image 2">
+    <img class="slideshow-image" src="img/3.jpg" alt="Image 3">
+  </div>
+
+  <!-- Slideshow navigation dots -->
+  <div class="dot-container">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <!-- JavaScript code for the slideshow functionality -->
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("slideshow-image");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    }
+  </script>
+   <footer>
+    &copy; 2023 Your Website. All rights reserved.
+  </footer>
+</body>
+
+</html>

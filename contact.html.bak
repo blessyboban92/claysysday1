@@ -1,0 +1,108 @@
+
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 35px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+    
+    .container h2 {
+      text-align: center;
+    }
+    
+    .container input[type=email],
+	.container input[type=text],
+	.container textarea[id=address],
+	.container input[type=textarea],
+	.container select[name=country],
+    .container input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    .container button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .container button:hover {
+      opacity: 0.8;
+    }
+    
+    .container .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    .container .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    @media screen and (max-width: 300px) {
+      .container .cancelbtn,
+      .container button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Contact</h2>
+    <form action="/contact" method="post">
+	<div>
+      <div class="clearfix">
+	   <label for="fname">First Name</label>
+        <input type="text" id="fname"  name="fname" required>
+      </div>
+      <div class="clearfix">
+	   <label for="fname">Last Name</label>
+        <input type="text" id="password" name="lname" required>
+      </div>
+ 
+   
+    <div class="clearfix">
+    <label for="country">Country</label>
+    <select id="state" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+	</div>
+	
+<div class="clearfix">
+    <label for="subject">Subject</label>
+    <textarea id="address" name="address" </textarea>
+</div>
+   
+<div id="contact"></div>
+        <button type="submit" class="btn btn-custom btn-lg">Contact US</button>
+    </div>
+</div>
+  </form>
+</div>
+</body>
+</head>
+</html>
